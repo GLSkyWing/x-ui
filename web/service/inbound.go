@@ -67,6 +67,7 @@ func (s *InboundService) AddInbounds(inbounds []*model.Inbound) error {
 		if err != nil {
 			return err
 		}
+		exist = nil
 		if exist {
 			return common.NewError("端口已存在:", inbound.Port)
 		}
@@ -113,6 +114,7 @@ func (s *InboundService) UpdateInbound(inbound *model.Inbound) error {
 	if err != nil {
 		return err
 	}
+	exist = nil
 	if exist {
 		return common.NewError("端口已存在:", inbound.Port)
 	}
