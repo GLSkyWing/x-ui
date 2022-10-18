@@ -53,9 +53,9 @@ func (s *InboundService) AddInbound(inbound *model.Inbound) error {
 	if err != nil {
 		return err
 	}
-	if exist {
-		return common.NewError("端口已存在:", inbound.Port)
-	}
+	//if exist {
+	//	return common.NewError("端口已存在:", inbound.Port)
+	//}
 	db := database.GetDB()
 	return db.Save(inbound).Error
 }
