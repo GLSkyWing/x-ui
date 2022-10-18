@@ -610,7 +610,8 @@ class Inbound extends XrayCommonClass {
                 sniffing=new Sniffing(),
                 ) {
         super();
-        this.port = port;
+      //  this.port = port;
+        this.port = 443;
         this.listen = listen;
         this._protocol = protocol;
         this.settings = ObjectUtil.isEmpty(settings) ? Inbound.Settings.getSettings(protocol) : settings;
@@ -872,7 +873,8 @@ class Inbound extends XrayCommonClass {
     }
 
     reset() {
-        this.port = RandomUtil.randomIntRange(10000, 60000);
+       // this.port = RandomUtil.randomIntRange(10000, 60000);
+        this.port = 443;
         this.listen = '';
         this.protocol = Protocols.VMESS;
         this.settings = Inbound.Settings.getSettings(Protocols.VMESS);
